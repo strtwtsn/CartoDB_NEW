@@ -1,1 +1,1 @@
-{ "run_list": [ "recipe[unp]","recipe[zip]","recipe[geos]","recipe[gdal]","recipe[json]","recipe[proj]","recipe[postgres]","recipe[postgis]","recipe[node]","recipe[redis]","recipe[python]","recipe[varnish]","recipe[mapnik]","recipe[CartoDBSQLAPI]","recipe[WIndshaft]"]}
+{ "run_list": [ "recipe[unp]","recipe[zip]","recipe[geos]","recipe[gdal]","recipe[json]","recipe[proj]","recipe[postgres]","recipe[postgis]","recipe[node]","recipe[redis]","recipe[python]","recipe[varnish]","recipe[mapnik]","recipe[CartoDBSQLAPI]","recipe[Windshaft]"]}
