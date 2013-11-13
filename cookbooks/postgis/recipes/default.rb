@@ -1,20 +1,20 @@
-#package "checkinstall"
+package "checkinstall"
 
-#remote_file "/usr/local/src/postgis-2.0.2.tar.gz" do
-#source "http://postgis.refractions.net/download/postgis-2.0.2.tar.gz"
-#end
+remote_file "/usr/local/src/postgis-2.0.2.tar.gz" do
+source "http://postgis.refractions.net/download/postgis-2.0.2.tar.gz"
+end
 
-#bash "Extract and install Postgis" do
-#user "root"
-#cwd "/usr/local/src"
-#code <<-EOH
-#tar xvzf postgis-2.0.2.tar.gz
-#cd postgis-2.0.2
-#./configure --with-raster --with-topology
-#make
-#checkinstall --pkgname postgis --pkgversion 2.0.2-src --default
-#EOH
-#end
+bash "Extract and install Postgis" do
+user "root"
+cwd "/usr/local/src"
+code <<-EOH
+tar xvzf postgis-2.0.2.tar.gz
+cd postgis-2.0.2
+./configure --with-raster --with-topology
+make
+checkinstall --pkgname postgis --pkgversion 2.0.2-src --default
+EOH
+end
 
 bash "configure postgis" do
 user "root"
