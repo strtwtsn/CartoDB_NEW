@@ -9,6 +9,6 @@ sudo add-apt-repository -y ppa:cartodb/redis
 sudo add-apt-repository -y ppa:cartodb/postgresql
 sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 sudo add-apt-repository -y ppa:mapnik/v2.1.0
-git clone https://github.com/strtwtsn/CartoDB_NEW.git /var/chef/cartodb
+sudo git clone https://github.com/strtwtsn/CartoDB_NEW.git /var/chef/cartodb
 chef-solo -c /var/chef/cartodb/config/chefsolo.rb -j /var/chef/cartodb/roles/cartodb.json
 
