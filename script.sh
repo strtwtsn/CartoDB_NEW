@@ -9,3 +9,4 @@ sudo add-apt-repository -y ppa:cartodb/redis
 sudo add-apt-repository -y ppa:cartodb/postgresql
 sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 sudo add-apt-repository -y ppa:mapnik/v2.1.0
+git clone 
