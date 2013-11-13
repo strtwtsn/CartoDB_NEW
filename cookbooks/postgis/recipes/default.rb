@@ -1,13 +1,10 @@
 package "checkinstall"
 
-remote_file "/tmp/postgis-2.0.2.tar.gz" do
-source "http://postgis.refractions.net/download/postgis-2.0.2.tar.gz"
-end
-
 bash "Extract and install Postgis" do
 user "root"
-cwd "/tmp/"
 code <<-EOH
+cd /tmp/
+wget http://postgis.refractions.net/download/postgis-2.0.2.tar.gz
 tar xvzf postgis-2.0.2.tar.gz
 cd postgis-2.0.2
 ./configure --with-raster --with-topology
