@@ -1,9 +1,15 @@
+package "libcurl4-openssl-dev"
+package "libssl-dev"
+package "zlib1g-dev"
+package "apache2-mpm-prefork"
+package "apache2-prefork-dev"
+package "libapr1-dev"
+package "libaprutil1-dev"
+
+
 bash "Install passenger components" do
-# user "ubuntu"
 code <<-EOH
-sudo -u ubuntu rvm --default use ruby-1.9.2-p320@cartodb
-sudo -u ubuntu gem install passenger
-sudo -u ubuntu passenger-install-apache2-module --auto
+rvm use 1.9.2@cartodb && gem install passenger
+rvm use 1.9.2@cartodb && passenger-install-apache2-module --auto
 EOH
 end
-
