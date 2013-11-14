@@ -17,6 +17,6 @@ chmod -R 755 /etc/pgbouncer/userlist.txt
 mkdir -p /var/log/pgbouncer
 touch /var/log/pgbouncer/pgbouncer.log
 chown -R postgres:postgres /var/log/pgbouncer
-chmod -r 777 /var/log/pgbouncer
+chmod -R 777 /var/log/pgbouncer
 EOH
 end
