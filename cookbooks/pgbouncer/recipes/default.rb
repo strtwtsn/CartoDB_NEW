@@ -20,3 +20,19 @@ chown -R postgres:postgres /var/log/pgbouncer
 chmod -R 777 /var/log/pgbouncer
 EOH
 end
+
+
+service "pgbouncer" do
+  supports :restart => true, :start => true, :stop => true, :reload => true
+  action :nothing
+end 
+
+
+template "/etc/init.d/pgbouncer" do
+source "pgbouncer.erb"
+owner "root"
+group "root"
+mode "0755"
+notifies :enable, "service[pgbouncer]"
+notifies :start, "service[pgbouncer]"
+end
