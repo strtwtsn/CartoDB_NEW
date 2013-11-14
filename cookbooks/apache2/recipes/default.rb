@@ -13,3 +13,9 @@ gem install passenger
 passenger-install-apache2-module --auto
 EOH
 end
+
+
+template "/etc/apache2/sites-available/cartodb-temp" do
+source "cartodb.erb"
+notifies :restart, resources(:service => "apache2"), :immediately
+end
