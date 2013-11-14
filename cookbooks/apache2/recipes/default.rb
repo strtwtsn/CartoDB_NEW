@@ -9,7 +9,7 @@ package "libaprutil1-dev"
 
 bash "Install passenger components" do
 code <<-EOH
-rvm use 1.9.2@cartodb && gem install passenger
-rvm use 1.9.2@cartodb && passenger-install-apache2-module --auto
+gem install passenger
+passenger-install-apache2-module --auto
 EOH
 end
