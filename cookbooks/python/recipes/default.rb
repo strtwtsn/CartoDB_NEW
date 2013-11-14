@@ -1,5 +1,6 @@
 package "python-setuptools"
 package "python-dev"
+package "libgdal1-dev"
  
 bash "Do python stuff" do
 user "root"
