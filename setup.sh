@@ -19,3 +19,6 @@ cd /etc/apache2/sites-available
 mv cartodb-temp ${SUBDOMAIN}
 sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /etc/apache2/sites-available/${SUBDOMAIN}
 sudo a2ensite ${SUBDOMAIN}
+sudo service windshaft start
+sudo service cartodb start
+sudo service resque start
