@@ -8,3 +8,16 @@ npm install
 EOH
 end
 
+
+service "cartodbsql" do
+  service_name "cartodbsql"
+  supports :restart => true, :status => true, :reload => true
+end
+
+
+
+template "/etc/init.d/cartodbsql" do
+source "cartodbsql.erb"
+mode 0755
+notifies :restart, resources(:service => "cartodbsql"), :immediately
+end
