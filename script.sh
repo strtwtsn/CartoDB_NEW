@@ -7,7 +7,7 @@ sudo tar -xvzf ruby-1.9.2-p320.tar.gz
 cd /usr/local/src/ruby-1.9.2-p320/
 sudo ./configure
 sudo make
-sudo checkinstall --pkgname ruby_1.9.2 --pkgversion 1.0 --default
+sudo make install
 sudo gem install bundler  --no-ri --no-rdoc
 sudo gem install chef -v 11.6.0 --no-ri --no-rdoc 
 sudo gem install ruby-shadow --no-ri --no-rdoc
