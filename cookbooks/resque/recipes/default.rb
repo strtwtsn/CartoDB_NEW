@@ -8,5 +8,5 @@ end
 template "/etc/init.d/resque" do
 source "resque.erb"
 mode "0755"
-notifies :restart, resources(:service => "postgresql"), :immediately
+notifies :restart, resources(:service => "resque"), :immediately
 end
