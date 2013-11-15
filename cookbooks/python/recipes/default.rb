@@ -7,7 +7,6 @@ user "root"
 code <<-EOH
 easy_install pip
 pip install --no-install GDAL
-cd /tmp/pip_build_root/GDAL/
 python /tmp/pip_build_root/GDAL/setup.py build_ext --include-dirs=/usr/include/gdal/
 pip install --no-download GDAL
 pip install -r /home/ubuntu/cartodb/cartodb20/python_requirements.txt
