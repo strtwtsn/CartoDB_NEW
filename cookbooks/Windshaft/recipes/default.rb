@@ -7,3 +7,18 @@ git checkout master
 npm install
 EOH
 end
+
+
+
+service "windshaft" do
+  service_name "windshaft"
+  supports :restart => true, :status => true, :reload => true
+end
+
+
+
+template "/etc/init.d/windshaft" do
+source "windshaft.erb"
+mode 0755
+notifies :restart, resources(:service => "windshaft"), :immediately
+end
