@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 cd /home/ubuntu/cartodb/cartodb20
 sudo bundle install
 sudo redis-server /etc/redis/redis.conf
