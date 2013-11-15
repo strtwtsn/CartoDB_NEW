@@ -22,3 +22,13 @@ source "windshaft.erb"
 mode 0755
 notifies :restart, resources(:service => "windshaft"), :immediately
 end
+
+template "/home/ubuntu/cartodb/cartodb20/Windshaft-cartodb/config/environments/development.js
+source "development.js"
+mode 0755
+end
+
+
+
+
+
