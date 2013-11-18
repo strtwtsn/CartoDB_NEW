@@ -3,7 +3,6 @@ cd /home/ubuntu/cartodb/cartodb20
 bundle --deployment
 sudo redis-server /etc/redis/redis.conf
 mv /home/ubuntu/cartodb/cartodb20/config/database.yml.sample  /home/ubuntu/cartodb/cartodb20/config/database.yml
-mv /home/ubuntu/cartodb/cartodb20/config/app_config.yml.sample  /home/ubuntu/cartodb/cartodb20/config/app_config.yml
 echo "Please enter your Subdomain: "
 read SUBDOMAIN
 echo "Please enter your Password: "
