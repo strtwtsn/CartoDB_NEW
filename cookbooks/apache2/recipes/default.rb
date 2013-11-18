@@ -24,3 +24,15 @@ source "nginx.erb"
 mode "0755"
 notifies :restart, resources(:service => "nginx"), :immediately
 end
+
+
+template "/opt/nginx/conf/nginx.conf" do
+source "nginx.conf.erb"
+notifies :restart, resources(:service => "nginx"), :immediately
+end
+
+
+
+template "/opt/nginx/sites-available/cartodb-temp"
+
+
