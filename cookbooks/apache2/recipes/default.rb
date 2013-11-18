@@ -11,3 +11,16 @@ gem install passenger -v 4.0.24
 passenger-install-nginx-module --auto
 EOH
 end
+
+service "nginx" do
+  service_name "nginx"
+  supports :restart => true, :status => true, :reload => true
+end
+
+
+
+template "/etc/init.d/nginx" do
+source "nginx.erb"
+mode "0755"
+notifies :restart, resources(:service => "nginx"), :immediately
+end
