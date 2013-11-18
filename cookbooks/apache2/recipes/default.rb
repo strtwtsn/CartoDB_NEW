@@ -9,6 +9,8 @@ bash "Install passenger components" do
 code <<-EOH
 gem install passenger -v 4.0.24
 passenger-install-nginx-module --auto
+mkdir -p /opt/nginx/sites-available
+mkdir -p /opt/nginx/sites-enabled
 EOH
 end
 
