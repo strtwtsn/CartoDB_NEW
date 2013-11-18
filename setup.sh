@@ -18,8 +18,9 @@ echo "127.0.0.1 ${SUBDOMAIN}.localhost.lan" | sudo tee -a /etc/hosts
 sudo cp /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/development.js.example /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/development.js
 sudo cp /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/development.js.example /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/development.js
 SUBDOMAIN=development
-cd /etc/apache2/sites-available
+cd /opt/nginx/sites-available
 sudo mv cartodb-temp ${SUBDOMAIN}
-sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /etc/apache2/sites-available/${SUBDOMAIN}
-sudo a2ensite ${SUBDOMAIN}
-sudo service apache2 start
+sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /opt/nginx/sites-available/${SUBDOMAIN}
+ln -s /opt/nginx/sites-available/${SUBDOMAIN} /opt/nginx/sites-enabled/${SUBDOMAIN}
+sudo service nginx restart
+
