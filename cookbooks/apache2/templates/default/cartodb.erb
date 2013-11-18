@@ -1,6 +1,8 @@
-<VirtualHost *:80>
-    # Change these 3 lines to suit your project
-    RailsEnv development
-    ServerName development.localhost.lan
-    DocumentRoot /home/ubuntu/cartodb/cartodb20/public
-</VirtualHost>
+server {
+listen 80;
+server_name development.localhost.lan;
+root /home/ubuntu/cartodb/cartodb20/public;
+passenger_enabled on;
+rails_env development;
+passenger_spawn_method direct;
+}
