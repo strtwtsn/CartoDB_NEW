@@ -24,7 +24,7 @@ Vizzuality Components:-
 * CartoDBSQL
 * Windshaft
 
-   <br />
+<br />
    
 **What OS does this work with?**
 
