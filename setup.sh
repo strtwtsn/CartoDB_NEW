@@ -16,7 +16,7 @@ sudo RAILS_ENV=production bundle exec rake cartodb:db:setup SUBDOMAIN="${SUBDOMA
 echo "127.0.0.1 ${SUBDOMAIN}.localhost.lan" | sudo tee -a /etc/hosts
 sudo cp /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/production.js.example /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/production.js
 sudo cp /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/production.js.example /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/production.js
-SUBDOMAIN= ${SUBDOMAIN}
+SUBDOMAIN=${SUBDOMAIN}
 cd /opt/nginx/sites-available
 sudo mv cartodb-temp ${SUBDOMAIN}
 sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /opt/nginx/sites-available/${SUBDOMAIN}
