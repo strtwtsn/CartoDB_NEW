@@ -1,4 +1,4 @@
-This Chef cookbook installs a development version of Vizzuality's CartoDB https://github.com/CartoDB/cartodb
+This Chef cookbook installs a production version of Vizzuality's CartoDB https://github.com/CartoDB/cartodb
 
 
 **What is installed?**

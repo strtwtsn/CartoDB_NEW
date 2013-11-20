@@ -14,12 +14,13 @@ read EMAIL
 sudo bundle exec rake cartodb:db:setup SUBDOMAIN="${SUBDOMAIN}" PASSWORD="${PASSWORD}" ADMIN_PASSWORD="${ADMIN_PASSWORD}" EMAIL="${EMAIL}"
 sudo bundle exec rake cartodb:db:setup SUBDOMAIN="${SUBDOMAIN}" PASSWORD="${PASSWORD}" ADMIN_PASSWORD="${ADMIN_PASSWORD}" EMAIL="${EMAIL}"
 echo "127.0.0.1 ${SUBDOMAIN}.localhost.lan" | sudo tee -a /etc/hosts
-sudo cp /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/development.js.example /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/development.js
-sudo cp /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/development.js.example /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/development.js
-SUBDOMAIN=development
+sudo cp /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/production.js.example /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/production.js
+sudo cp /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/production.js.example /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/production.js
+SUBDOMAIN= ${SUBDOMAIN}
 cd /opt/nginx/sites-available
 sudo mv cartodb-temp ${SUBDOMAIN}
 sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /opt/nginx/sites-available/${SUBDOMAIN}
+sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /etc/pgbouncer/userlist.txt
 ln -s /opt/nginx/sites-available/${SUBDOMAIN} /opt/nginx/sites-enabled/${SUBDOMAIN}
 sudo service nginx restart
 
