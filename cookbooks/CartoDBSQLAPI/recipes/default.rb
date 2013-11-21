@@ -22,3 +22,12 @@ mode 0755
 notifies :restart, resources(:service => "cartodbsql"), :immediately
 end
 
+bash "Update config file" do
+user "root"
+code <<-EOH
+cd /home/ubuntu/cartodb/CartoDB-SQL-API/config/environments/
+wget https://raw.github.com/strtwtsn/CartoDB_NEW/Production/cookbooks/CartoDBSQLAPI/templates/default/production.js.erb
+mv production.js.erb production.js
+EOH
+end
+
