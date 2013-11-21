@@ -35,7 +35,7 @@ end
 
 
 
-template "/opt/nginx/sites-available/cartodb-temp"
+template "/opt/nginx/sites-available/cartodb-temp" do
 source "cartodb.erb"
 notifies :restart, resources(:service => "nginx"), :immediately
 end
