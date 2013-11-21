@@ -22,7 +22,7 @@ mode 0755
 notifies :restart, resources(:service => "cartodbsql"), :immediately
 end
 
-template "/home/ubuntu/cartodb/cartodb20/CartoDB-SQL-API/config/environments/production.js"
+template "/home/ubuntu/cartodb/cartodb20/CartoDB-SQL-API/config/environments/production.js" do
 source "production.js.erb"
 mode 0755
 end
