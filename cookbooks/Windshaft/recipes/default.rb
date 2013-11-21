@@ -23,12 +23,12 @@ mode 0755
 notifies :restart, resources(:service => "windshaft"), :immediately
 end
 
-template "/home/ubuntu/cartodb/cartodb20/Windshaft-cartodb/config/environments/production.js" do
-source "production.js.erb"
-mode 0755
+bash "Update config file" do
+user "root"
+code <<-EOH
+cd /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/
+wget https://raw.github.com/strtwtsn/CartoDB_NEW/Production/cookbooks/Windshaft/templates/default/production.js.erb
+mv production.js.erb production.js
+EOH
 end
-
-
-
-
 
