@@ -21,9 +21,9 @@ sudo cp /home/ubuntu/cartodb/Windshaft-cartodb/config/environments/production.js
 SUBDOMAIN=${SUBDOMAIN}
 cd /opt/nginx/sites-available
 sudo mv cartodb-temp ${SUBDOMAIN}
-sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /opt/nginx/sites-available/${SUBDOMAIN}
-sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /etc/pgbouncer/userlist.txt
-sed -i 's/localhost.lan/${DOMAIN}/g' /home/ubuntu/cartodb/*
-ln -s /opt/nginx/sites-available/${SUBDOMAIN} /opt/nginx/sites-enabled/${SUBDOMAIN}
+sudo sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /opt/nginx/sites-available/${SUBDOMAIN}
+sudo sed -i 's/SUBDOMAIN/${SUBDOMAIN}/g' /etc/pgbouncer/userlist.txt
+sudo sed -i 's/localhost.lan/${DOMAIN}/g' /home/ubuntu/cartodb/*
+sudo ln -s /opt/nginx/sites-available/${SUBDOMAIN} /opt/nginx/sites-enabled/${SUBDOMAIN}
 sudo service nginx restart
 
