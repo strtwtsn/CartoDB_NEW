@@ -8,7 +8,7 @@ package "libaprutil1-dev"
 bash "Install passenger components" do
 code <<-EOH
 gem install passenger -v 4.0.24
-passenger-install-nginx-module --auto --auto-download --prefix=/opt
+passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx
 mkdir -p /opt/nginx/sites-available
 mkdir -p /opt/nginx/sites-enabled
 EOH
