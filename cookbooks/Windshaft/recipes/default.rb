@@ -23,7 +23,7 @@ mode 0755
 notifies :restart, resources(:service => "windshaft"), :immediately
 end
 
-template "/home/ubuntu/cartodb/cartodb20/Windshaft-cartodb/config/environments/production.js
+template "/home/ubuntu/cartodb/cartodb20/Windshaft-cartodb/config/environments/production.js" do
 source "production.js.erb"
 mode 0755
 end
